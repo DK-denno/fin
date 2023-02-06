@@ -1,0 +1,51 @@
+{% extends 'base2.html' %}
+{% load bootstrap4 %}
+{% block content %}
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+</head>
+
+<body>
+    <h2>Streams</h2>
+    <table>
+        <tr>
+            <th>Stream</th>
+            <th>Classes</th>
+            <th>Created on</th>
+            <th>Action</th>
+        </tr>
+
+        {% for stream in streams %}
+        <tr>
+            <td>Form {{stream.name}}</td>
+            <td>{{stream.classes.all | length }}</td>
+            <td>{{stream.createdOn|timesince}} ago</td>
+            <td>
+                <a href="/one/{{stream.name}}">
+                    Classes
+                </a>
+            </td>
+        </tr>
+
+        {% endfor %}
+    </table>
+
+</body>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base2.html' %}
+{% load bootstrap4 %}
+
+{% block content %}
+<br><br>
+<div class='container'>
+
+    <div class='row'>
+
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            {% if profile.dp %}
+            <img src="{{profile.dp.cdn_url}}" id="prof" width='400' height='400' alt="">
+            {% else %}
+            <img src="https://www.w3schools.com/howto/img_avatar.png" width='200' height='200' id="prof" alt="">
+
+            {% endif %}
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+        <div class="row">
+
+            Name : {{profile.user.first_name}} {{profile.user.last_name}}  <br>
+            RegNumber : {{profile.regNumber}} <br>
+            Class : Form {{profile.classes.stream.name}}{{profile.classes.name}} <br>
+            Admission Date : {{profile.createdOn}} <br>
+            
+        </div>
+</div>
+
+{% endblock %}

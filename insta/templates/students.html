@@ -1,0 +1,54 @@
+{% extends 'base2.html' %}
+{% load bootstrap4 %}
+{% block content %}
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+</head>
+
+<body>
+    <h2>Class Capaity {{students | length}}</h2>
+    <table>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Registration Number</th>
+            <th>Gender</th>
+            <th>Created on</th>
+            <th>Action</th>
+        </tr>
+
+        {% for student in students %}
+        <tr>
+            <td>{{student.user.first_name}}</td>
+            <td>{{student.user.last_name}}</td>
+            <td>{{student.regNumber}}</td>
+            <td>{{student.gender}}</td>
+            <td>{{student.createdOn | timesince}}</td>
+            <td>
+                <a href="/prof/{{student.id}}">
+                    View Student
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+
+{% endblock %}

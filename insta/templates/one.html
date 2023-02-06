@@ -1,0 +1,58 @@
+{% extends 'base2.html' %}
+{% load bootstrap4 %}
+{% block content %}
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+</head>
+
+<body>
+    <h2>Classes</h2>
+    <table>
+        <tr>
+            <th>Class</th>
+            <th>Class Teacher</th>
+            <th>Students</th>
+            <th>Created on</th>
+            <th>Action</th>
+        </tr>
+
+        {% for class in classes %}
+            <tr>
+                <td>Form {{class.stream.name}}{{class.name}}</td>
+                <td>
+                {% if class.classTeacher.profile.gender == 'male' %}
+                    Mr
+                {% else %}
+                    Mrs
+                {% endif %}
+                {{class.classTeacher.first_name }} {{class.classTeacher.last_name }}</td>
+                <td>{{class.profile.all | length | add:"-1"}}</td>
+                <td>{{class.createdOn | timesince}} ago</td>
+                <td>
+                    <a href="/students/{{class.id}}">
+                        Students
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+</body>
+
+{% endblock %}
