@@ -2,27 +2,23 @@
 #### Web clone of the Instagram app
 #### By **[Dennis Kamau]**
 
-## Description
-This is a simple web clone of the instagram website. A user can create an account and sign into it.
-The site supports uploading images, and following other users.
-users can view photos uploaded by other users in the home page of app.
 
 ## Set Up and Installations
 
 ### Prerequisites
 1. Ubuntu Software
-2. Python3.6
+2. Python3 or higher
 3. [Postgres](https://www.postgresql.org/download/)
 4. [python virtualenv](https://gist.github.com/Geoyi/d9fab4f609e9f75941946be45000632b)
 
 ### Clone the Repo
 Run the following command on the terminal:
-`git clone https://github.com/DK-denno/instadk.git && cd Instagram`
+`git clone https://github.com/DK-denno/fin.git fin && cd fin`
 
 ### Activate virtual environment
 Activate virtual environment using python3.6 as default handler
 ```bash
-virtualenv -p /usr/bin/python3.6 venv && source venv/bin/activate
+virtualenv -p /usr/bin/python3 venv && source venv/bin/activate
 ```
 
 ### Install dependancies
@@ -32,13 +28,13 @@ Install dependancies that will create an environment for the app to run
 ### Create the Database
 ```bash
 psql
-CREATE DATABASE instadk;
+CREATE DATABASE school;
 ```
 ### .env file
 Create .env file and paste paste the following filling where appropriate:
 ```python
 SECRET_KEY = '<Secret_key>'
-DBNAME = 'insta'
+DBNAME = 'school'
 USER = '<Username>'
 PASSWORD = '<password>'
 DEBUG = True
@@ -51,7 +47,7 @@ EMAIL_HOST_PASSWORD = '<your-password>'
 ```
 ### Run initial Migration
 ```bash
-python3 manage.py makemigrations gram
+python3 manage.py makemigrations
 python3 manage.py migrate
 ```
 
