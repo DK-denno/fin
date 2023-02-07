@@ -55,13 +55,13 @@ python3 manage.py migrate
 ```bash
 python3.6 manage.py runserver
 ```
-Open terminal on `localhost:8000`
+Open browser on `localhost:8000`
 
 ### Create a super user Account (System Admin)
 ```bash
 python3 manage.py createsuper and follow the prompts
 ```
-Open terminal on `localhost:8000/admin`
+Open browser on `localhost:8000/admin`
 
 ## Known bugs
 The UI might not be the best but functionality is okaaay
