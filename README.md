@@ -1,5 +1,4 @@
 # [FINTECH](https://instadk.herokuapp.com)
-#### Web clone of the Instagram app
 #### By **[Dennis Kamau]**
 
 
